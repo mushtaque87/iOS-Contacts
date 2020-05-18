@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="Contacts" customModuleProvider="target">
+            <connections>
+                <outlet property="callBtn" destination="zJD-r6-17P" id="eFf-Vc-bNa"/>
+                <outlet property="emailBtn" destination="yAN-Qk-0Hb" id="UW9-Y5-bQZ"/>
+                <outlet property="favBtn" destination="r1Z-r9-kdj" id="uoi-Kp-IGQ"/>
+                <outlet property="imageView" destination="ZV0-u3-wMw" id="Ex4-9Q-1pT"/>
+                <outlet property="messageBtn" destination="FXA-sT-aXQ" id="oTN-MR-01h"/>
+                <outlet property="nameLabel" destination="CTf-0x-aA0" id="17e-Br-wQ6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="675" height="421"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXK-7f-810" userLabel="Detail View">
+                    <rect key="frame" x="0.0" y="44" width="675" height="343"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rks-Td-E4f">
+                            <rect key="frame" x="0.0" y="17" width="675" height="309"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Xbg-1b-cfn" userLabel="Image Stack View">
+                                    <rect key="frame" x="20" y="0.0" width="635" height="227"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZV0-u3-wMw">
+                                            <rect key="frame" x="204" y="0.0" width="227" height="227"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ZV0-u3-wMw" secondAttribute="height" multiplier="1:1" id="4bg-fB-nGR"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="126" id="YeA-q6-R2h"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="placeholder_photo"/>
+                                            <connections>
+                                                <action selector="setImages" destination="-1" eventType="touchUpInside" id="thw-0Y-wEt"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Amithabh Bachan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTf-0x-aA0">
+                                    <rect key="frame" x="246" y="227" width="183.5" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="zQB-t8-Up7"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Ooj-li-L94" userLabel="Button Stack View">
+                                    <rect key="frame" x="225.5" y="277" width="224" height="32"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXA-sT-aXQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="32" id="1Hq-8d-6fO"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="message_button"/>
+                                            <connections>
+                                                <action selector="sendSms:" destination="-1" eventType="touchUpInside" id="1H7-he-qJB"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJD-r6-17P">
+                                            <rect key="frame" x="64" y="0.0" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="32" id="LdL-jG-1OB"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="call_button"/>
+                                            <connections>
+                                                <action selector="call:" destination="-1" eventType="touchUpInside" id="0yg-8N-x9g"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAN-Qk-0Hb">
+                                            <rect key="frame" x="128" y="0.0" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="32" id="WfT-Bg-TgX"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="email_button"/>
+                                            <connections>
+                                                <action selector="sendMail:" destination="-1" eventType="touchUpInside" id="1yL-nF-vou"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1Z-r9-kdj">
+                                            <rect key="frame" x="192" y="0.0" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="32" id="C1e-Ip-k9m"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="favourite_button"/>
+                                            <connections>
+                                                <action selector="setFavorite:" destination="-1" eventType="touchUpInside" id="euF-IQ-fsT"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="Hfg-Ff-61r"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Xbg-1b-cfn" firstAttribute="width" relation="greaterThanOrEqual" secondItem="rks-Td-E4f" secondAttribute="width" constant="-40" id="J7I-qY-wA9"/>
+                                <constraint firstItem="Ooj-li-L94" firstAttribute="width" relation="lessThanOrEqual" secondItem="rks-Td-E4f" secondAttribute="width" id="qH7-UG-rYZ"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.24438975730000001" green="0.81864689089999998" blue="0.71379375460000005" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" red="0.42538864570000001" green="0.80897049489999995" blue="0.71394798530000003" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="rks-Td-E4f" firstAttribute="centerY" secondItem="JXK-7f-810" secondAttribute="centerY" id="6Qo-Q9-goq"/>
+                        <constraint firstItem="rks-Td-E4f" firstAttribute="width" secondItem="JXK-7f-810" secondAttribute="width" id="FRJ-EF-EuS"/>
+                        <constraint firstItem="rks-Td-E4f" firstAttribute="centerX" secondItem="JXK-7f-810" secondAttribute="centerX" id="bfY-kR-AdF"/>
+                        <constraint firstItem="rks-Td-E4f" firstAttribute="height" secondItem="JXK-7f-810" secondAttribute="height" multiplier="0.9" id="tgH-Ff-JKo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="JXK-7f-810" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" id="BvX-9Q-zQo"/>
+                <constraint firstItem="JXK-7f-810" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="DMq-bm-daY"/>
+                <constraint firstItem="JXK-7f-810" firstAttribute="width" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="width" id="gy5-i6-rnH"/>
+                <constraint firstItem="JXK-7f-810" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="wiY-jI-ynz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="558.69565217391312" y="97.433035714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="call_button" width="45" height="44"/>
+        <image name="email_button" width="45" height="44"/>
+        <image name="favourite_button" width="44" height="44"/>
+        <image name="message_button" width="44" height="44"/>
+        <image name="placeholder_photo" width="126" height="126"/>
+    </resources>
+</document>

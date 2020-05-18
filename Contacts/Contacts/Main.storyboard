@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZTy-WM-jaK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="WNe-0l-Jge">
+            <objects>
+                <navigationController id="ZTy-WM-jaK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="idM-gO-25B">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mVZ-4w-5Pv" kind="relationship" relationship="rootViewController" id="Cy3-Lv-R7w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NMf-fD-fxZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1407" y="-62"/>
+        </scene>
+        <!--Contact List View Controller-->
+        <scene sceneID="5OR-pT-HFc">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="mVZ-4w-5Pv" customClass="ContactListViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yaq-8F-nR3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="lDA-Yj-AXS">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6Ue-HG-3fb">
+                                <rect key="frame" x="0.0" y="82.5" width="414" height="785"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gHl-pa-SIr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="785"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Ue-HG-3fb" firstAttribute="centerY" secondItem="jry-d7-hey" secondAttribute="centerY" id="XJu-eg-J3S"/>
+                            <constraint firstItem="6Ue-HG-3fb" firstAttribute="height" secondItem="jry-d7-hey" secondAttribute="height" multiplier="1.01467" id="bxF-CI-6gB"/>
+                            <constraint firstItem="6Ue-HG-3fb" firstAttribute="centerX" secondItem="jry-d7-hey" secondAttribute="centerX" id="fOh-aw-bm0"/>
+                            <constraint firstItem="6Ue-HG-3fb" firstAttribute="width" secondItem="jry-d7-hey" secondAttribute="width" id="rFJ-Ws-B7c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jry-d7-hey"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="X6Y-kw-8V7"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="lDA-Yj-AXS" id="SmC-Zf-ipJ"/>
+                        <outlet property="contactsTableView" destination="gHl-pa-SIr" id="HeR-hx-grv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uG7-VU-MxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-520" y="-62"/>
+        </scene>
+        <!--Contact Detail View Controller-->
+        <scene sceneID="vLl-o9-Yhs">
+            <objects>
+                <viewController storyboardIdentifier="DetailView" id="2wf-Kl-dwT" customClass="ContactDetailViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8ss-KH-397">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yun-BP-HxW" userLabel="Details Stack View">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bx2-cp-ewH" userLabel="Detail View" customClass="HeaderView" customModule="Contacts" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="286.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.42538864567198714" green="0.80897049492385786" blue="0.71394798527898873" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLt-L2-YRp">
+                                        <rect key="frame" x="0.0" y="286.5" width="414" height="531.5"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="OdL-HT-9ZE">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="531.5"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </tableView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="OdL-HT-9ZE" firstAttribute="height" secondItem="oLt-L2-YRp" secondAttribute="height" id="8en-3s-Zhv"/>
+                                            <constraint firstItem="OdL-HT-9ZE" firstAttribute="centerY" secondItem="oLt-L2-YRp" secondAttribute="centerY" id="FoL-AK-n3J"/>
+                                            <constraint firstItem="OdL-HT-9ZE" firstAttribute="width" secondItem="oLt-L2-YRp" secondAttribute="width" id="Ygh-rO-r8o"/>
+                                            <constraint firstItem="OdL-HT-9ZE" firstAttribute="centerX" secondItem="oLt-L2-YRp" secondAttribute="centerX" id="aYQ-yK-8ug"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bx2-cp-ewH" firstAttribute="height" secondItem="Yun-BP-HxW" secondAttribute="height" multiplier="0.35" id="CM9-si-FaH"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Yun-BP-HxW" firstAttribute="centerX" secondItem="vtV-fo-bcf" secondAttribute="centerX" id="M9q-lM-KPM"/>
+                            <constraint firstItem="Yun-BP-HxW" firstAttribute="centerY" secondItem="vtV-fo-bcf" secondAttribute="centerY" id="P6M-Ap-lD6"/>
+                            <constraint firstItem="oLt-L2-YRp" firstAttribute="width" secondItem="8ss-KH-397" secondAttribute="width" id="Q6V-Ra-bnr"/>
+                            <constraint firstItem="Yun-BP-HxW" firstAttribute="width" secondItem="8ss-KH-397" secondAttribute="width" id="gLk-mu-buc"/>
+                            <constraint firstItem="Yun-BP-HxW" firstAttribute="height" secondItem="vtV-fo-bcf" secondAttribute="height" id="yFd-oI-Lwo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vtV-fo-bcf"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailTableView" destination="OdL-HT-9ZE" id="piI-6N-lrn"/>
+                        <outlet property="headerView" destination="bx2-cp-ewH" id="LNr-ER-0l6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rv8-HA-MS9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="208.69565217391306" y="-66.294642857142861"/>
+        </scene>
+    </scenes>
+</document>
